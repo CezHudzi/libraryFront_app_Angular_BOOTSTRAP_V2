@@ -16,6 +16,8 @@ export class LoginFormComponent implements OnInit {
   @Input() public logged: boolean;
   @Output() public outPutToParentLogin = new EventEmitter<string>();
   @Output() public outPutToParentPassword = new EventEmitter<string>();
+  @Output() public outPutToParentUSER = new EventEmitter<LoginGet>();
+  @Output() public outPutToParentLOGOUT = new EventEmitter<boolean>();
 
 
   public login: string;
@@ -54,6 +56,7 @@ export class LoginFormComponent implements OnInit {
       this.passwordUser = borrowForm.value.titleBook;
       this.outPutToParentLogin.emit(this.login);
       this.outPutToParentPassword.emit(this.passwordUser);
+      this.outPutToParentUSER.emit(this.loginGet);
       this.logged = true;
       borrowForm.resetForm();
     } else {
@@ -68,9 +71,9 @@ export class LoginFormComponent implements OnInit {
 
 
   logout() {
-    this.login = 'Login';
-    this.outPutToParentLogin.emit(this.login);
+    this.outPutToParentLOGOUT.emit(true);
     this.passwordUser = null;
+    this.login = null;
     this.logged = false;
 
   }

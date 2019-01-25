@@ -6,7 +6,7 @@
     <div class="btn-group  btn-group-lg" role="group" aria-label="Basic example">
 
       <button (click)="setMenu(0)" class="btn btn-secondary" style="width: 100%; height: 80%;">
-        {{login}}&nbsp;&nbsp;&nbsp;&nbsp;
+        {{buttonName}}&nbsp;&nbsp;&nbsp;&nbsp;
       </button>
 
 
@@ -38,7 +38,8 @@
 
 
   <app-login-form [logged]="logged" *ngIf="menu==0" (outPutToParentLogin)="receiveLogin($event)"
-                  (outPutToParentPassword)="receivePass($event)"></app-login-form>
+                  (outPutToParentPassword)="receivePass($event)" (outPutToParentUSER)="reciveUser($event)"
+                  (outPutToParentLOGOUT)="reciveLOGOUT($event)"></app-login-form>
 
 
 
