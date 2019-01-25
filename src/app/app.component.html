@@ -1,4 +1,4 @@
-
+<div style="background-image: url('../assets/backgroundMain.jpg');">
 
   <div class="col">
 
@@ -25,8 +25,8 @@
       </button>
     </div>
 
-
-
+  </div>
+</div>
 
     <app-book [login]="login" [password]="password" *ngIf="menu==1"></app-book>
     <app-autor [login]="login" [password]="password" *ngIf="menu==2"></app-autor>
@@ -34,11 +34,14 @@
     <app-borrow [login]="login" [password]="password" *ngIf="menu==4"></app-borrow>
 
 
-  </div>
+
 
 
   <app-login-form [logged]="logged" *ngIf="menu==0" (outPutToParentLogin)="receiveLogin($event)"
                   (outPutToParentPassword)="receivePass($event)"></app-login-form>
+
+
+
 
 
   <!--
@@ -57,7 +60,4 @@
     <app-autor></app-autor>
       <app-book></app-book>
     --->
-
-
-
 
